@@ -85,7 +85,9 @@ deleteURL(api_dev_key, url_key)
     * Each object we store is small (less than 1K).
     * There are no relationships between records—other than storing which user created a URL.
     * Our service is read-heavy.
-![](/assets/bitly-db1.png)
+
+![bitly db model](/assets/db_model.png)
+
 * Since we anticipate storing billions of rows, and we don’t need to use relationships between objects – a NoSQL key-value store like DynamoDB, Cassandra or Riak is a better choice. A NoSQL choice would also be easier to scale. Please see SQL vs NoSQL for more details.
 
 ## High Level Design / Specifics of Design
