@@ -61,4 +61,5 @@ var canJump = function(nums) {
 ## Complexity
 
 **Time Complexity**: O(n) because we are only iterating through once.
+
 **Space Compliexity:** O(1) because we do not store any values besides lastReachableIdx.
