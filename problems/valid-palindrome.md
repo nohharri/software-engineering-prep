@@ -60,3 +60,7 @@ var isPalindrome = function(s) {
 };
 ```
 
+## Complexity
+
+**Time Complexity:** O(N) where N is the length of s. This is fairly straightforward. We are iterating through the length once. It would more accurately be N / 2.
+**Space Complexity:** O(1) because we are not using any extra space. If we want to be technical, we are using O(N) space to recycle the space of s but we are not using extra space because we are just re-using the variable.
