@@ -121,3 +121,8 @@ var subarraySum = function(nums, k) {
 ```
 
 The reason we have ```map[currSum] = currSum in map ? map[currSum] + 1 : 1;``` is because we need to account for the scenario where a value is cancelled out. For example, consider ```[6, -6, 6]```. We need to get the cumulative value of as many times we've seen the value 6 because we have [6], [6, -6, 6] and [6]. if we only got one from it everytime, we would fail to consider [6, -6, 6] scenario.
+
+# Complexity
+
+**Time Complexity**: O(N), we are simply iterating through the array.
+**Space Complexity**: O(N), All calculations are being stored in a map.
