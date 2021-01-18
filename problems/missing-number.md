@@ -53,3 +53,7 @@ var missingNumber = function(nums) {
     return corrSum - numsSum;
 };
 ```
+# Complexity
+
+### Time: O(N)
+### Space: O(1)
