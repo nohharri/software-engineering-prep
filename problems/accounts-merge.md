@@ -53,3 +53,7 @@ var accountsMerge = function(accounts) {
     return ans;
 };
 ```
+
+# Complexity
+### Time: O(Sum(accounts))
+### Space: O(Sum(emailGraph)) where emailGraph is the size of our graph
