@@ -1,3 +1,5 @@
+# Binary Tree right side view
+
 https://leetcode.com/problems/binary-tree-right-side-view/
 
 ```javascript
@@ -23,3 +25,10 @@ var rightSideView = function(root) {
     return ans;
 };
 ```
+# Complexity
+
+### Time: O(N)
+* We are traversing through the whole tree.
+
+### Space: O(logN)
+* The recursion stack will only be the size of the tree. We are also storing heightCheckedMap but we are only storing logN nodes.
