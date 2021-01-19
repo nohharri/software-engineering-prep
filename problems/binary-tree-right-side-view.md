@@ -1,6 +1,6 @@
 https://leetcode.com/problems/binary-tree-right-side-view/
 
-```
+```javascript
 var rightSideView = function(root) {
     let ans = [];
     let heightCheckedMap = {};
