@@ -55,7 +55,50 @@ pickIndex will be called at most 10000 times.
 
 
 # Solution
-1. This is a very math-focused problem centered around probability. One important thing we have to know is how to calculate weighted probability.
-2.
+1. This is a very math-focused problem centered around probability. One important thing we have to know is how to calculate weighted probability. This problem focuses on the prefixSum. We can calculate range or bucket the number covers. Let's consider the problem:
 
-![test](/assets/problems/IMG_1976.heic)
+```
+w = [1, 2, 4]
+```
+
+2. We can calculate the prefixSum this way:
+```
+w = [1, 2, 4]
+prefixSum = [1, 3, 7]
+```
+3. And the bucket/weight distribution would look like this.
+```
+_1_  ___3___ _______7_______
+```
+This shows us how much distribution there would be if you randomly picked a point on the line with your finger. Now how do we calculate this problem using rand()? Well we could do this by calculating a random number between 0 and 1 and then multiply it to the cumulative sum. This way, we get a number 0 - 7. If that number falls between the range of a bucket, then we know that number is of that index. That index is our answer. 
+
+```javascript
+var Solution = function(w) {
+    this.prefixSumArr = [];
+    let currSum = 0;
+    for(let i = 0; i < w.length; i++) {
+        currSum += w[i];
+        this.prefixSumArr.push(currSum);
+    }
+};
+
+/**
+ * @return {number}
+ */
+Solution.prototype.pickIndex = function() {
+    const randNum = Math.random();
+    const val = this.prefixSumArr[this.prefixSumArr.length - 1] * randNum;
+    for (let i = 0; i < this.prefixSumArr.length; i++) {
+        if (val < this.prefixSumArr[i]) {
+            return i;
+        }
+    }
+    return 0;
+};
+```
+
+# Complexity
+### Time: O(N)
+* Regular traversal.
+### Space: O(N)
+* We need N extra space to store the presum array.
